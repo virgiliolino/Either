@@ -1,7 +1,7 @@
 # Exception handling as a form of code micromanagement
 
 
-I started coding more or less at 6 years old, in one very old version of BASIC. Every line of code needed to be preceded by a line number.
+I started coding more or less when I was 6 years old with a very primitive version of BASIC. Every line of code needed to be preceded by a line number.
 Just like this:
 ```
 10 print "hello"
@@ -9,18 +9,18 @@ Just like this:
 30 for ....
 ```
 
-Notice the number increasing by 10. This, because I could at something between the lines, I'd have done like this:
+Notice the number increasing by 9. This, because I could add something between the lines, I'd have done like this:
 ```
 10 print "hello"
-15 print "world"
 20 let a = 5
 30 for ...
+15 print "world"
 ```
-then it was enough to write **renum** to have again a distance of 9 between each line. 
+then it was enough to write **renum** to have again a distance of 9 between each line and reorder the line number 15 between the 10 and the 20.
 
-To **go** to a different line we could just write goto and the line number.
+To **go to**  a different line we could just write goto and the line number.
 
-Then arrived the wonderful Quick Basic. It had two main advantages: the possibility to save in EXE, and not anymore line numbers! From now on a goto could be referred not anymore to a line number, but to a label. To me it was a wonderful abstraction, instead of writing ```goto 10```, I could just give more sense to my code by doing for example something like ```goto :error```
+After some years it arrived the wonderful Quick Basic. It had two main advantages: the possibility to save to EXE(I didn't called it compilation), and not anymore line numbers! From now on a goto could be referred not anymore to a line number, but to a label. To me it was a wonderful abstraction, instead of writing ```goto 10```, I could just give more sense to my code by doing for example something like ```goto :error```
 
 Nowadays, 50 years after the letter *Go To Statement Considered Harmful* Edsger Dijkstra's, we just stopped using GOTO or at least we think we did. We found many alternatives to do that dirty job in a formally cleaner way. For example we introduced the concept of *Exceptions*. It works wonderfully for operating systems, and should have remained on that lower level, handled by the OS in case of exceptional events not found during the compilation phase, like a division by zero. We mixed that concept with high level concerns to micromanage the execution flow increasing the complexity of the code. We're determining not just how a problem should be solved, but also trying to impose a temporal correlation of every module in the code. Every time it make sense the order of execution of one or more instructions, we're talking about **complexity caused by control**. 
 
